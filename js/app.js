@@ -1,5 +1,4 @@
-const key = 'a7oGHH47rsFtu6QOOTZM1pqPghY6yY2U';
-const url = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/249758?apikey=${key}&language=en-us&details=false&metric=true`;
+const url = `http://api.weatherapi.com/v1/forecast.json?key=58bfe70145024c918aa154724222403&q=Amsterdam&days=1&aqi=no&alerts=no`
 
 getWeather()
 async function getWeather(){
@@ -10,9 +9,10 @@ async function getWeather(){
 }
 
 function calcAan(data){
-    tempMin = (data.DailyForecasts[0].Temperature.Minimum.Value)
+    tempMin = (data.forecast.forecastday[0].day.mintemp_c)
+    console.log(tempMin)
     document.getElementById('tempMinTxt').innerHTML = "Minimum = " + tempMin + " C"
-    tempMax = (data.DailyForecasts[0].Temperature.Maximum.Value)
+    tempMax = (data.forecast.forecastday[0].day.maxtemp_c)
     document.getElementById('tempMaxTxt').innerHTML = "Maximum = " + tempMax + " C"
     plotKorteBroek(tempMax)
 }
@@ -26,3 +26,5 @@ function plotKorteBroek(tempMax) {
         document.getElementById('antwoordTxt').innerHTML = "Nee"
     }
 }
+
+
