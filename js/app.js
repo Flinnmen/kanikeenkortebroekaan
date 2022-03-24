@@ -1,4 +1,4 @@
-const url = `http://api.weatherapi.com/v1/forecast.json?key=58bfe70145024c918aa154724222403&q=Amsterdam&days=1&aqi=no&alerts=no`
+const url = `https://api.weatherapi.com/v1/forecast.json?key=58bfe70145024c918aa154724222403&q=Amsterdam&days=1&aqi=no&alerts=no`
 
 getWeather()
 async function getWeather(){
